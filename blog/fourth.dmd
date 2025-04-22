@@ -1,0 +1,9 @@
++++
+title = "My fourth post"
+date = 2024-04-22
+[taxonomies]
+tags = ["Rant"]
+categories = ["Programming"]
++++
+
+This is my fourth blog post.

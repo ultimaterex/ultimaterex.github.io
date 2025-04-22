@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog By Selby</title>
+  <link rel="stylesheet" href="https://blog.serubii.com/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="https:&#x2F;&#x2F;blog.serubii.com" class="nav__logo">Blog By Selby</a>
+      <div class="nav__links">
+        <a href="https://blog.serubii.com/blog/" class="nav__link">Posts</a>
+        <a href="https://blog.serubii.com/about/" class="nav__link">About</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="content">
+    
+<div class="blog-container">
+    <h1 class="title">
+        Blog
+    </h1>
+
+    <!-- Category Filter -->
+    <div class="category-filter">
+        <button class="category-filter__button active" data-category="all">All Posts</button>
+        
+        
+        <button class="category-filter__button" data-category="General">General</button>
+        
+    </div>
+
+    <!-- Posts Grid -->
+    <div class="posts-grid">
+        
+        <article class="post-card" data-categories="General">
+            <h2 class="post-card__title">
+                <a href="https://blog.serubii.com/blog/hello-world/">Hello World</a>
+            </h2>
+            <div class="post-card__meta">
+                <time datetime="2024-04-22">April 22, 2024</time>
+                
+                <div class="post-card__categories">
+                    
+                    <span class="post-card__category">General</span>
+                    
+                </div>
+                
+            </div>
+            
+            <p class="post-card__excerpt">A glance into the future</p>
+            
+        </article>
+        
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.category-filter__button');
+    const postCards = document.querySelectorAll('.post-card');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Update active state
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            const category = button.dataset.category;
+            
+            postCards.forEach(card => {
+                if (category === 'all' || (card.dataset.categories && card.dataset.categories.includes(category))) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+});
+</script>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Blog By Selby. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+
+</html>
