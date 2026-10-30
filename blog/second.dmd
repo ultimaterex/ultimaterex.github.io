@@ -1,9 +1,0 @@
-+++
-title = "My second post"
-date = 2024-04-22
-[taxonomies]
-tags = ["welcome"]
-categories = ["Homelab"]
-+++
-
-This is my second blog post.
